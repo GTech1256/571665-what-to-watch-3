@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Роман Бакакин](https://up.htmlacademy.ru/react/3/user/571665).
-* Наставник: `Неизвестно`.
+* Наставник: [Белик Павел](https://htmlacademy.ru/profile/id84572).
 
 ---
 
