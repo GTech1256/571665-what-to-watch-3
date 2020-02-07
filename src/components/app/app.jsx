@@ -1,18 +1,9 @@
 import React from "react";
-import Main from "../main/main.jsx";
+import Main, {propTypes} from "../main/main.jsx";
 
 
-const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const {mainFilm: {name, genre, releaseDate}} = props;
+const App = (props) => <Main {...props} />;
 
-  return (
-    <Main
-      filmName={name}
-      filmGenre={genre}
-      filmReleaseDate={releaseDate} />
-  );
-};
-
+App.propTypes = propTypes;
 
 export default App;
