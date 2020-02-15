@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import FilmCard from "../film-card/film-card";
+import FilmCard from "../film-card/film-card.jsx";
 
 class FilmList extends Component {
   constructor(props) {
