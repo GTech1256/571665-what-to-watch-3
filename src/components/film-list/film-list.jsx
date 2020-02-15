@@ -25,9 +25,9 @@ class FilmList extends Component {
   render() {
     return (
       <div className="catalog__movies-list">
-        {this.films.length === 0 ?
+        {this.props.films.length === 0 ?
           <p>Список фильмов пуст</p> :
-          this.films
+          this.props.films
                 .map((filmName, idx) => <FilmCard
                   name={filmName}
                   onHover={() => this._handleHoverOnFilmCard(idx)}
