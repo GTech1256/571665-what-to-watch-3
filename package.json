@@ -36,6 +36,6 @@
     "react-dom": "16.12.0"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "setupTests.js"
+    "setupFilesAfterEnv": ["./setupTests.js"]
   }
 }
