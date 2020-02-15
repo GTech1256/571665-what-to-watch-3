@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
+import films from "./mocks/films.js";
 
 const Settings = {
   filmOnHeader: {
@@ -8,13 +9,12 @@ const Settings = {
     genre: `Drama`,
     releaseDate: `2014`
   },
-  films: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`]
 };
 
 ReactDOM.render(
     <App
       filmOnHeader={Settings.filmOnHeader}
-      films={Settings.films}
+      films={films}
     />,
     document.querySelector(`#root`)
 );
