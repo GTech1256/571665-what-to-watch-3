@@ -1,21 +1,21 @@
 import React from "react";
 import {mount} from "enzyme";
 import FilmList from "./film-list";
+import FilmCard from "../film-card/film-card";
 
 const mock = {
   films: [
-    `a`,
-    `b`,
-    `c`,
-    `d`,
-    `e`,
-    `f`
+    {name: `a`},
+    {name: `b`},
+    {name: `c`},
+    {name: `d`},
+    {name: `e`},
+    {name: `f`}
   ]
 };
 
 it(`Should call function onHover when the user hovers the mouse over a component <FilmCard /> and return data-object`, () => {
   const {films} = mock;
-  const onFilmCardHover = jest.fn();
   const props = {
     films
   };
@@ -34,14 +34,8 @@ it(`Should call function onHover when the user hovers the mouse over a component
   secondFilm.simulate(`mouseover`);
 
   // количество карточек фильмов совпадает с количеством элементов фильмов
-  // expect(secondFilm.render().find(filmCardClassName)).to.have.lengthOf(1);
-
-  // функция обратного вызова была вызвана
-  expect(onFilmCardHover).toHaveBeenCalledTimes(1);
+  expect(filmList.find(FilmCard)).toHaveLength(mock.films.length);
 
   // стейт поменялся
-  expect(secondFilm.state(`indexOfActiveFilm`)).toBe(expectFilm);
-
-  // функция обратного вызова вернула корректное значение
-  expect(onFilmCardHover.mock.result[0].value).toBe(expectFilm);
+  expect(filmList.state(`activeFilm`)).toBe(expectFilm);
 });

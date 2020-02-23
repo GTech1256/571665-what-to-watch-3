@@ -4,12 +4,12 @@ import FilmList from "./film-list";
 
 const mock = {
   films: [
-    `a`,
-    `b`,
-    `c`,
-    `d`,
-    `e`,
-    `f`
+    {name: `a`},
+    {name: `b`},
+    {name: `c`},
+    {name: `d`},
+    {name: `e`},
+    {name: `f`}
   ]
 };
 

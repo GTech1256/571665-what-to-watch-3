@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
+import {filmPropTypes} from "../film-card/film-card.jsx";
 
 const titleButtonHandler = () => {};
 
@@ -19,7 +20,7 @@ App.propTypes = {
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired
   }).isRequired,
-  films: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  films: PropTypes.arrayOf(filmPropTypes).isRequired,
 };
 
 export default App;

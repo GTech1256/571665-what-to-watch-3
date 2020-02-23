@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmList from "../film-list/film-list.jsx";
+import {filmPropTypes} from "../film-card/film-card.jsx";
 
 const Main = ({
   filmOnHeader: {name, genre, releaseDate},
@@ -160,7 +161,7 @@ Main.propTypes = {
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired
   }).isRequired,
-  films: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  films: PropTypes.arrayOf(filmPropTypes).isRequired,
   onTitleButtonClick: PropTypes.func.isRequired,
 };
 

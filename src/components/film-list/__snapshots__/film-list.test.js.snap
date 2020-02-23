@@ -12,7 +12,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="a"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
@@ -37,7 +37,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="b"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
@@ -62,7 +62,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="c"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
@@ -87,7 +87,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="d"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
@@ -112,7 +112,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="e"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
@@ -137,7 +137,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="f"
+        alt=""
         height="175"
         src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
