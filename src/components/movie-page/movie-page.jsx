@@ -1,14 +1,14 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
+import {filmPropTypes} from "../film-card/film-card.jsx";
+import {Link} from "react-router-dom";
 
 const MoviePage = ({
-  film: {
-    name,
-    genre,
-    releaseDate,
-    poster,
-    cover
-  }
+  name,
+  genre,
+  releaseDate,
+  poster,
+  cover,
+  rating
 }) => (
   <Fragment>
     <div className="visually-hidden">
@@ -45,11 +45,11 @@ const MoviePage = ({
 
         <header className="page-header movie-card__head">
           <div className="logo">
-            <a href="main.html" className="logo__link">
+            <Link to="/" className="logo__link">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            </Link>
           </div>
 
           <div className="user-block">
@@ -108,7 +108,7 @@ const MoviePage = ({
             </nav>
 
             <div className="movie-rating">
-              <div className="movie-rating__score">8,9</div>
+              <div className="movie-rating__score">{rating.toString().slice(0, 3)}</div>
               <p className="movie-rating__meta">
                 <span className="movie-rating__level">Very good</span>
                 <span className="movie-rating__count">240 ratings</span>
@@ -174,11 +174,11 @@ const MoviePage = ({
 
       <footer className="page-footer">
         <div className="logo">
-          <a href="main.html" className="logo__link logo__link--light">
+          <Link to="/" className="logo__link logo__link--light">
             <span className="logo__letter logo__letter--1">W</span>
             <span className="logo__letter logo__letter--2">T</span>
             <span className="logo__letter logo__letter--3">W</span>
-          </a>
+          </Link>
         </div>
 
         <div className="copyright">
@@ -189,20 +189,6 @@ const MoviePage = ({
   </Fragment>
 );
 
-MoviePage.propTypes = {
-  film: PropTypes.exact({
-    name: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    poster: PropTypes.exact({
-      url: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
-    }),
-    cover: PropTypes.exact({
-      url: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
-    })
-  }).isRequired
-};
+MoviePage.propTypes = filmPropTypes;
 
 export default MoviePage;

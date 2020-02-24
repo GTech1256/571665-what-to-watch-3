@@ -1,53 +1,62 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
 import Main from "../main/main.jsx";
 import {filmPropTypes} from "../film-card/film-card.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
 
-const titleButtonHandler = () => {};
+class App extends PureComponent {
 
-const devProps = {
-  film: {
-    name: `NAME`,
-    genre: `GENRE`,
-    releaseDate: `2000`,
-    poster: {
-      url: `img/the-grand-budapest-hotel-poster.jpg`,
-      name: `POSTER NAME`
-    },
-    cover: {
-      url: `img/bg-the-grand-budapest-hotel.jpg`,
-      name: `POSTER NAME`
-    }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeFilm: this.props.films[0]
+    };
+
+    this._handleClickOnFilm = this._handleClickOnFilm.bind(this);
   }
-};
 
-const App = ({
-  filmOnHeader,
-  films
-}) => <BrowserRouter>
-  <Switch>
-    <Route exact path="/">
-      <Main
-        filmOnHeader={filmOnHeader}
-        films={films}
-        onTitleButtonClick={titleButtonHandler}
-      />
-    </Route>
-    <Route exact path="/dev-film">
-      <MoviePage {...devProps} />
-    </Route>
-  </Switch>
-</BrowserRouter>;
+  _handleClickOnFilm(film) {
+    this.setState(
+        {
+          activeFilm: film
+        },
+        () => {
+          // console.log(this.props);
+          console.log(`PUSH`);
+
+          this.props.history.push(`/dev-film`);
+        }
+    );
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Main
+              filmOnHeader={this.props.filmOnHeader}
+              films={this.props.films}
+              onFilmClick={this._handleClickOnFilm}
+            />
+          </Route>
+          <Route exact path="/dev-film">
+            <MoviePage {...this.state.activeFilm} />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 
 App.propTypes = {
-  filmOnHeader: PropTypes.exact({
-    name: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired
-  }).isRequired,
+  filmOnHeader: filmPropTypes,
   films: PropTypes.arrayOf(filmPropTypes).isRequired,
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
-export default App;
+export default withRouter(App);

@@ -12,7 +12,7 @@ const FilmCard = ({
   return (
     <article
       className="small-movie-card catalog__movies-card"
-      onMouseOver={handleMouseover}
+      onClick={handleMouseover}
     >
       <div className="small-movie-card__image">
         <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt={name} width="280" height="175" />
@@ -25,7 +25,18 @@ const FilmCard = ({
 };
 
 const filmPropTypes = PropTypes.exact({
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  poster: PropTypes.exact({
+    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }),
+  cover: PropTypes.exact({
+    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  })
 });
 
 FilmCard.propTypes = {

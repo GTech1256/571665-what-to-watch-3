@@ -23,7 +23,7 @@ it(`<Main /> should render correct`, () => {
     .create(<Main
       filmOnHeader={mockData.filmOnHeader}
       films={mockData.films}
-      onTitleButtonClick={() => {}}
+      onFilmClick={() => {}}
     />)
     .toJSON();
 
