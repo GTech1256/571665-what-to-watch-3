@@ -7,19 +7,8 @@ class FilmList extends Component {
     super(props);
 
     this.state = {
-      activeFilm: -1
+      activeFilm: null
     };
-
-    this._handleHoverOnFilmCard = this._handleHoverOnFilmCard.bind(this);
-  }
-
-  /**
-   * @param {Object} film
-   */
-  _handleHoverOnFilmCard(film) {
-    this.setState({
-      activeFilm: film
-    });
   }
 
   render() {
@@ -30,7 +19,7 @@ class FilmList extends Component {
           this.props.films
                 .map((film) => <FilmCard
                   film={film}
-                  onHover={this._handleHoverOnFilmCard}
+                  onHover={this.props.onFilmClick}
                   key={film.name}
                 />)
         }
@@ -40,7 +29,8 @@ class FilmList extends Component {
 }
 
 FilmList.propTypes = {
-  films: PropTypes.arrayOf(filmPropTypes).isRequired
+  films: PropTypes.arrayOf(filmPropTypes).isRequired,
+  onFilmClick: PropTypes.func.isRequired
 };
 
 export default FilmList;
