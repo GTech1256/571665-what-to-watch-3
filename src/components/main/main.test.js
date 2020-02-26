@@ -8,7 +8,14 @@ const mockData = {
     genre: `Drama`,
     releaseDate: `2014`
   },
-  films: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`]
+  films: [
+    {name: `a`},
+    {name: `b`},
+    {name: `c`},
+    {name: `d`},
+    {name: `e`},
+    {name: `f`}
+  ]
 };
 
 it(`<Main /> should render correct`, () => {
