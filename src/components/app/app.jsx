@@ -1,6 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
 import {filmPropTypes} from "../film-card/film-card.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
@@ -18,17 +18,9 @@ class App extends PureComponent {
   }
 
   _handleClickOnFilm(film) {
-    this.setState(
-        {
-          activeFilm: film
-        },
-        () => {
-          // console.log(this.props);
-          console.log(`PUSH`);
-
-          this.props.history.push(`/dev-film`);
-        }
-    );
+    this.setState({
+      activeFilm: film
+    });
   }
 
   render() {
@@ -59,4 +51,4 @@ App.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export default withRouter(App);
+export default App;

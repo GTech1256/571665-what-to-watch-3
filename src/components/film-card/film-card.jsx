@@ -1,13 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {withRouter} from "react-router-dom";
 
 const FilmCard = ({
   film,
-  onHover
+  onHover,
+  history
 }) => {
+
   function handleMouseover() {
     onHover(film);
+    history.push(`dev-film`);
   }
+
 
   return (
     <article
@@ -41,9 +46,10 @@ const filmPropTypes = PropTypes.exact({
 
 FilmCard.propTypes = {
   film: filmPropTypes,
-  onHover: PropTypes.func.isRequired
+  onHover: PropTypes.func.isRequired,
+  history: PropTypes.func.isRequired
 };
 
 export {filmPropTypes};
 
-export default FilmCard;
+export default withRouter(FilmCard);
