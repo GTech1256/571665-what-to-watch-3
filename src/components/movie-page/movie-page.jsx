@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
-import {filmPropTypes} from "../film-card/film-card.jsx";
 import {Link} from "react-router-dom";
+import {filmPropTypes} from "../../types";
 
 const MoviePage = ({
   name,

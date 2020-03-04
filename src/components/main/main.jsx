@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmList from "../film-list/film-list.jsx";
-import {filmPropTypes} from "../film-card/film-card.jsx";
+import {filmPropTypes} from "../../types.js";
 
 const Main = ({
   filmOnHeader,

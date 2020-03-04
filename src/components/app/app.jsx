@@ -2,8 +2,8 @@ import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
-import {filmPropTypes} from "../film-card/film-card.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
+import {filmPropTypes} from "../../types.js";
 
 class App extends PureComponent {
 
