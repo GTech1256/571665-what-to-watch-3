@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router-dom";
-import {filmPropTypes} from "../../types";
+import MoviePage from "../movie-page/movie-page.jsx";
 
 const FilmCard = ({
   film,
@@ -31,9 +31,9 @@ const FilmCard = ({
 };
 
 FilmCard.propTypes = {
-  film: filmPropTypes,
+  film: PropTypes.shape(MoviePage.propTypes),
   onHover: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired
+  history: PropTypes.object.isRequired
 };
 
 export default withRouter(FilmCard);

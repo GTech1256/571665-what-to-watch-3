@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
-import {filmPropTypes} from "../../types.js";
 
 class App extends PureComponent {
 
@@ -44,11 +43,8 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  filmOnHeader: filmPropTypes,
-  films: PropTypes.arrayOf(filmPropTypes).isRequired,
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  filmOnHeader: PropTypes.shape(MoviePage.propTypes),
+  films: PropTypes.arrayOf(PropTypes.shape(MoviePage.propTypes)).isRequired,
 };
 
 export default App;

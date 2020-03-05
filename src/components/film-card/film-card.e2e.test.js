@@ -1,9 +1,23 @@
 import React from "react";
 import {mount} from "enzyme";
 import FilmCard from "./film-card";
+import {MemoryRouter} from "react-router-dom";
 
 const mock = {
-  film: {name: `a`},
+  film: {
+    name: `Fantastic Beasts`,
+    genre: `fantasy`,
+    releaseDate: `2016`,
+    rating: 9.9999,
+    poster: {
+      url: `img/the-grand-budapest-hotel-poster.jpg`,
+      name: `POSTER NAME`
+    },
+    cover: {
+      url: `img/bg-the-grand-budapest-hotel.jpg`,
+      name: `POSTER NAME`
+    }
+  },
 };
 
 it(`Should call function onHover when the user hovers the mouse over a component <FilmCard /> and return data-object`, () => {
@@ -16,11 +30,17 @@ it(`Should call function onHover when the user hovers the mouse over a component
 
   const expectFilm = mock.film;
 
-  const filmList = mount(<FilmCard
-    {...props}
-  />);
+  const filmCard = mount(
+      <MemoryRouter>
+        <FilmCard
+          {...props}
+        />
+      </MemoryRouter>
+  );
 
-  filmList.simulate(`mouseover`);
+  filmCard
+    .find(`.small-movie-card.catalog__movies-card`)
+    .simulate(`click`);
 
   // функция обратного вызова была вызвана
   expect(onFilmCardHover).toHaveBeenCalledTimes(1);

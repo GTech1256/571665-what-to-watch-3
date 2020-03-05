@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmList from "../film-list/film-list.jsx";
-import {filmPropTypes} from "../../types.js";
+import MoviePage from "../movie-page/movie-page.jsx";
 
 const Main = ({
   filmOnHeader,
@@ -165,8 +165,8 @@ const Main = ({
 };
 
 Main.propTypes = {
-  filmOnHeader: filmPropTypes,
-  films: PropTypes.arrayOf(filmPropTypes).isRequired,
+  filmOnHeader: PropTypes.shape(MoviePage.propTypes),
+  films: PropTypes.arrayOf(PropTypes.shape(MoviePage.propTypes)).isRequired,
   onFilmClick: PropTypes.func.isRequired,
 };
 

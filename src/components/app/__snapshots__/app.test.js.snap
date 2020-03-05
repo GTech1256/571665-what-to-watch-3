@@ -116,7 +116,7 @@ Array [
       className="movie-card__bg"
     >
       <img
-        alt="The Grand Budapest Hotel"
+        alt="The Godfather"
         src="img/bg-the-grand-budapest-hotel.jpg"
       />
     </div>
@@ -176,7 +176,7 @@ Array [
           className="movie-card__poster"
         >
           <img
-            alt="The Grand Budapest Hotel poster"
+            alt="The Godfather poster"
             height="327"
             src="img/the-grand-budapest-hotel-poster.jpg"
             width="218"
@@ -189,7 +189,7 @@ Array [
             className="movie-card__title"
             onClick={[Function]}
           >
-            The Grand Budapest Hotel
+            The Godfather
           </h2>
           <p
             className="movie-card__meta"
@@ -197,12 +197,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Drama
+              GENRE
             </span>
             <span
               className="movie-card__year"
             >
-              2014
+              2000
             </span>
           </p>
           <div
@@ -367,7 +367,7 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -386,13 +386,13 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              a
+              Fantastic Beasts
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -411,13 +411,13 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              b
+              The Grand Budapest Hotel
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -436,13 +436,13 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              c
+              Bohemian Rhapsody
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -461,13 +461,13 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              d
+              Macbeth
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -486,13 +486,13 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              e
+              The Godfather
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onMouseOver={[Function]}
+          onClick={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -511,7 +511,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              f
+              The Wizard of Oz
             </a>
           </h3>
         </article>

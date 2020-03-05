@@ -121,7 +121,7 @@ Array [
       >
         <img
           alt="coverName"
-          src="https://google.com/picture"
+          src="https://via.placeholder.com/150"
         />
       </div>
       <h1
@@ -256,7 +256,7 @@ Array [
           <img
             alt="posterName"
             height="327"
-            src="https://google.com/picture"
+            src="https://via.placeholder.com/150"
             width="218"
           />
         </div>

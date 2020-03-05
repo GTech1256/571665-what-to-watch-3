@@ -3,7 +3,7 @@
 exports[`<FilmCard /> should render correct 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
-  onMouseOver={[Function]}
+  onClick={[Function]}
 >
   <div
     className="small-movie-card__image"
