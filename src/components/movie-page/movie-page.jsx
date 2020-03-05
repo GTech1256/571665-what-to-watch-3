@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import {getRaitinLevelTextByScoreRaiting} from "./utils";
 
 const MoviePage = ({
   name,
@@ -110,7 +111,7 @@ const MoviePage = ({
             <div className="movie-rating">
               <div className="movie-rating__score">{rating.toString().slice(0, 3)}</div>
               <p className="movie-rating__meta">
-                <span className="movie-rating__level">Very good</span>
+                <span className="movie-rating__level">{getRaitinLevelTextByScoreRaiting(rating)}</span>
                 <span className="movie-rating__count">240 ratings</span>
               </p>
             </div>
