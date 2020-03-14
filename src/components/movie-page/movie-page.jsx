@@ -202,7 +202,10 @@ MoviePage.propTypes = {
   cover: PropTypes.exact({
     url: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
-  })
+  }),
+  preview: PropTypes.exact({
+    url: PropTypes.string.isRequired
+  }),
 };
 
 export default MoviePage;

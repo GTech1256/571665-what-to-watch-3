@@ -1,34 +1,86 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router-dom";
 import MoviePage from "../movie-page/movie-page.jsx";
+import VideoPlayer from "../video-player/video-player.jsx";
 
-const FilmCard = ({
-  film,
-  onHover,
-  history
-}) => {
+let currentTimeout = null;
+const TIMEOUT_DELAY = 3000; // 3s
 
-  function handleMouseover() {
+function clearVideoDelayedPlayback() {
+  if (currentTimeout) {
+    clearTimeout(currentTimeout);
+  }
+}
+
+class FilmCard extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isVideoPlaying: false
+    };
+
+    this.handleCardClick = this.handleCardClick.bind(this);
+    this.handleMouseover = this.handleMouseover.bind(this);
+    this.startVideoPlaying = this.startVideoPlaying.bind(this);
+    this.stopVideoPlaying = this.stopVideoPlaying.bind(this);
+  }
+
+  handleCardClick() {
+    this.props.history.push(`dev-film`);
+  }
+
+  handleMouseover() {
+    const {onHover, film} = this.props;
+
     onHover(film);
-    history.push(`dev-film`);
+    clearVideoDelayedPlayback();
+
+    currentTimeout = setTimeout(this.startVideoPlaying, TIMEOUT_DELAY);
+  }
+
+  startVideoPlaying() {
+    this.setState({
+      isVideoPlaying: true
+    });
+  }
+
+  stopVideoPlaying() {
+    clearVideoDelayedPlayback();
+
+    this.setState({
+      isVideoPlaying: false
+    });
   }
 
 
-  return (
-    <article
-      className="small-movie-card catalog__movies-card"
-      onClick={handleMouseover}
-    >
-      <div className="small-movie-card__image">
-        <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt={name} width="280" height="175" />
-      </div>
-      <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
-      </h3>
-    </article>
-  );
-};
+  render() {
+    const {handleCardClick, handleMouseover, stopVideoPlaying} = this;
+    const {film} = this.props;
+    const {isVideoPlaying} = this.state;
+
+    return (
+      <article
+        className="small-movie-card catalog__movies-card"
+        onClick={handleCardClick}
+        onMouseOver={handleMouseover}
+        onMouseLeave={stopVideoPlaying}
+      >
+        <div className="small-movie-card__image">
+          <VideoPlayer
+            poster={film.poster.url}
+            src={film.preview.url}
+            isPlaying={isVideoPlaying}
+          />
+        </div>
+        <h3 className="small-movie-card__title">
+          <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
+        </h3>
+      </article>
+    );
+  }
+}
 
 FilmCard.propTypes = {
   film: PropTypes.shape(MoviePage.propTypes),
