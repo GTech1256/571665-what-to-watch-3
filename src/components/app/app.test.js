@@ -15,6 +15,9 @@ const mockData = {
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   },
   films: [
@@ -30,6 +33,9 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
     },
     {
@@ -44,6 +50,9 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
     },
     {
@@ -58,6 +67,9 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
     },
     {
@@ -72,6 +84,9 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
     },
     {
@@ -86,6 +101,9 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
     },
     {
@@ -100,17 +118,27 @@ const mockData = {
       cover: {
         url: `img/bg-the-grand-budapest-hotel.jpg`,
         name: `POSTER NAME`
+      },
+      preview: {
+        url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
       }
-    }
+    },
   ]
 };
 
 it(`<App /> should render correct`, () => {
   const tree = renderer
-    .create(<App
-      filmOnHeader={mockData.filmOnHeader}
-      films={mockData.films}
-    />)
+    .create(
+        <App
+          filmOnHeader={mockData.filmOnHeader}
+          films={mockData.films}
+        />,
+        {
+          createNodeMock: () => {
+            return {};
+          }
+        }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

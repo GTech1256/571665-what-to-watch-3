@@ -5,7 +5,7 @@ import MoviePage from "../movie-page/movie-page.jsx";
 import VideoPlayer from "../video-player/video-player.jsx";
 
 let currentTimeout = null;
-const TIMEOUT_DELAY = 3000; // 3s
+const TIMEOUT_DELAY = 1000; // 1s
 
 function clearVideoDelayedPlayback() {
   if (currentTimeout) {
@@ -28,13 +28,13 @@ class FilmCard extends PureComponent {
   }
 
   handleCardClick() {
+    const {onClick, film} = this.props;
+
+    onClick(film);
     this.props.history.push(`dev-film`);
   }
 
   handleMouseover() {
-    const {onHover, film} = this.props;
-
-    onHover(film);
     clearVideoDelayedPlayback();
 
     currentTimeout = setTimeout(this.startVideoPlaying, TIMEOUT_DELAY);
@@ -84,7 +84,7 @@ class FilmCard extends PureComponent {
 
 FilmCard.propTypes = {
   film: PropTypes.shape(MoviePage.propTypes),
-  onHover: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
 

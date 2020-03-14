@@ -16,16 +16,19 @@ const mock = {
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   },
 };
 
 it(`Should call function onHover when the user hovers the mouse over a component <FilmCard /> and return data-object`, () => {
   const {film} = mock;
-  const onFilmCardHover = jest.fn();
+  const handleFilmCardClick = jest.fn();
   const props = {
     film,
-    onHover: onFilmCardHover
+    onClick: handleFilmCardClick
   };
 
   const expectFilm = mock.film;
@@ -43,8 +46,8 @@ it(`Should call function onHover when the user hovers the mouse over a component
     .simulate(`click`);
 
   // функция обратного вызова была вызвана
-  expect(onFilmCardHover).toHaveBeenCalledTimes(1);
+  expect(handleFilmCardClick).toHaveBeenCalledTimes(1);
 
   // функция обратного вызова была вызвана с корректным значением
-  expect(onFilmCardHover.mock.calls[0][0]).toBe(expectFilm);
+  expect(handleFilmCardClick.mock.calls[0][0]).toBe(expectFilm);
 });

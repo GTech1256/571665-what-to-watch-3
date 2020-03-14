@@ -9,7 +9,7 @@ const FilmList = ({films, onFilmClick}) => (
       <p>Список фильмов пуст</p> :
       films.map((film) => <FilmCard
         film={film}
-        onHover={onFilmClick}
+        onClick={onFilmClick}
         key={film.name}
       />)
     }
