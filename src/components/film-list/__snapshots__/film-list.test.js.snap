@@ -6,15 +6,17 @@ exports[`<FilmList /> shoult render correct 1`] = `
 >
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -25,21 +27,23 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        a
+        Fantastic Beasts
       </a>
     </h3>
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -50,21 +54,23 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        b
+        The Grand Budapest Hotel
       </a>
     </h3>
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -75,21 +81,23 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        c
+        Bohemian Rhapsody
       </a>
     </h3>
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -100,21 +108,23 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        d
+        Macbeth
       </a>
     </h3>
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -125,21 +135,23 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        e
+        The Godfather
       </a>
     </h3>
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
+    onMouseLeave={[Function]}
     onMouseOver={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt=""
+      <video
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        poster="img/the-grand-budapest-hotel-poster.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -150,7 +162,7 @@ exports[`<FilmList /> shoult render correct 1`] = `
         className="small-movie-card__link"
         href="movie-page.html"
       >
-        f
+        The Wizard of Oz
       </a>
     </h3>
   </article>

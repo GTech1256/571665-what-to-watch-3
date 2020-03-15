@@ -1,49 +1,91 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import {withRouter} from "react-router-dom";
+import MoviePage from "../movie-page/movie-page.jsx";
+import VideoPlayer from "../video-player/video-player.jsx";
 
-const FilmCard = ({
-  film,
-  onHover
-}) => {
-  function handleMouseover() {
-    onHover(film);
+let currentTimeout = null;
+const TIMEOUT_DELAY = 1000; // 1s
+
+function clearVideoDelayedPlayback() {
+  if (currentTimeout) {
+    clearTimeout(currentTimeout);
+  }
+}
+
+class FilmCard extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isVideoPlaying: false
+    };
+
+    this.handleCardClick = this.handleCardClick.bind(this);
+    this.handleMouseover = this.handleMouseover.bind(this);
+    this.startVideoPlaying = this.startVideoPlaying.bind(this);
+    this.stopVideoPlaying = this.stopVideoPlaying.bind(this);
   }
 
-  return (
-    <article
-      className="small-movie-card catalog__movies-card"
-      onClick={handleMouseover}
-    >
-      <div className="small-movie-card__image">
-        <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt={name} width="280" height="175" />
-      </div>
-      <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
-      </h3>
-    </article>
-  );
-};
+  handleCardClick() {
+    const {onClick, film} = this.props;
 
-const filmPropTypes = PropTypes.exact({
-  name: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  releaseDate: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  poster: PropTypes.exact({
-    url: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
-  }),
-  cover: PropTypes.exact({
-    url: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
-  })
-});
+    onClick(film);
+    this.props.history.push(`dev-film`);
+  }
+
+  handleMouseover() {
+    clearVideoDelayedPlayback();
+
+    currentTimeout = setTimeout(this.startVideoPlaying, TIMEOUT_DELAY);
+  }
+
+  startVideoPlaying() {
+    this.setState({
+      isVideoPlaying: true
+    });
+  }
+
+  stopVideoPlaying() {
+    clearVideoDelayedPlayback();
+
+    this.setState({
+      isVideoPlaying: false
+    });
+  }
+
+
+  render() {
+    const {handleCardClick, handleMouseover, stopVideoPlaying} = this;
+    const {film} = this.props;
+    const {isVideoPlaying} = this.state;
+
+    return (
+      <article
+        className="small-movie-card catalog__movies-card"
+        onClick={handleCardClick}
+        onMouseOver={handleMouseover}
+        onMouseLeave={stopVideoPlaying}
+      >
+        <div className="small-movie-card__image">
+          <VideoPlayer
+            poster={film.poster.url}
+            src={film.preview.url}
+            isPlaying={isVideoPlaying}
+          />
+        </div>
+        <h3 className="small-movie-card__title">
+          <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
+        </h3>
+      </article>
+    );
+  }
+}
 
 FilmCard.propTypes = {
-  film: filmPropTypes,
-  onHover: PropTypes.func.isRequired
+  film: PropTypes.shape(MoviePage.propTypes),
+  onClick: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
-export {filmPropTypes};
-
-export default FilmCard;
+export default withRouter(FilmCard);

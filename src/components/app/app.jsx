@@ -1,8 +1,7 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
-import {filmPropTypes} from "../film-card/film-card.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
 
 class App extends PureComponent {
@@ -18,17 +17,9 @@ class App extends PureComponent {
   }
 
   _handleClickOnFilm(film) {
-    this.setState(
-        {
-          activeFilm: film
-        },
-        () => {
-          // console.log(this.props);
-          console.log(`PUSH`);
-
-          this.props.history.push(`/dev-film`);
-        }
-    );
+    this.setState({
+      activeFilm: film
+    });
   }
 
   render() {
@@ -52,11 +43,8 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  filmOnHeader: filmPropTypes,
-  films: PropTypes.arrayOf(filmPropTypes).isRequired,
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  filmOnHeader: PropTypes.shape(MoviePage.propTypes),
+  films: PropTypes.arrayOf(PropTypes.shape(MoviePage.propTypes)).isRequired,
 };
 
-export default withRouter(App);
+export default App;

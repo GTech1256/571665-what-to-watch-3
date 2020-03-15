@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> should render correct 1`] = `
+exports[`<MoviePage /> shoult render correct 1`] = `
 Array [
   <div
     className="visually-hidden"
   >
     <svg
+      xlinkHref="http://www.w3.org/1999/xlink"
       xmlns="http://www.w3.org/2000/svg"
     >
       <symbol
@@ -110,86 +111,77 @@ Array [
     </svg>
   </div>,
   <section
-    className="movie-card"
+    className="movie-card movie-card--full"
   >
     <div
-      className="movie-card__bg"
-    >
-      <img
-        alt="The Godfather"
-        src="img/bg-the-grand-budapest-hotel.jpg"
-      />
-    </div>
-    <h1
-      className="visually-hidden"
-    >
-      WTW
-    </h1>
-    <header
-      className="page-header movie-card__head"
+      className="movie-card__hero"
     >
       <div
-        className="logo"
+        className="movie-card__bg"
       >
-        <a
-          className="logo__link"
-        >
-          <span
-            className="logo__letter logo__letter--1"
-          >
-            W
-          </span>
-          <span
-            className="logo__letter logo__letter--2"
-          >
-            T
-          </span>
-          <span
-            className="logo__letter logo__letter--3"
-          >
-            W
-          </span>
-        </a>
+        <img
+          alt="coverName"
+          src="https://via.placeholder.com/150"
+        />
       </div>
-      <div
-        className="user-block"
+      <h1
+        className="visually-hidden"
+      >
+        WTW
+      </h1>
+      <header
+        className="page-header movie-card__head"
       >
         <div
-          className="user-block__avatar"
+          className="logo"
         >
-          <img
-            alt="User avatar"
-            height="63"
-            src="img/avatar.jpg"
-            width="63"
-          />
+          <a
+            className="logo__link"
+            href="/"
+            onClick={[Function]}
+          >
+            <span
+              className="logo__letter logo__letter--1"
+            >
+              W
+            </span>
+            <span
+              className="logo__letter logo__letter--2"
+            >
+              T
+            </span>
+            <span
+              className="logo__letter logo__letter--3"
+            >
+              W
+            </span>
+          </a>
         </div>
-      </div>
-    </header>
-    <div
-      className="movie-card__wrap"
-    >
-      <div
-        className="movie-card__info"
-      >
         <div
-          className="movie-card__poster"
+          className="user-block"
         >
-          <img
-            alt="The Godfather poster"
-            height="327"
-            src="img/the-grand-budapest-hotel-poster.jpg"
-            width="218"
-          />
+          <div
+            className="user-block__avatar"
+          >
+            <img
+              alt="User avatar"
+              height="63"
+              src="img/avatar.jpg"
+              width="63"
+            />
+          </div>
         </div>
+      </header>
+      <div
+        className="movie-card__wrap"
+      >
         <div
           className="movie-card__desc"
         >
           <h2
             className="movie-card__title"
-            onClick={[Function]}
           >
-            The Godfather
+            Film name
           </h2>
           <p
             className="movie-card__meta"
@@ -197,12 +189,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              GENRE
+              genre
             </span>
             <span
               className="movie-card__year"
             >
-              2000
+              date
             </span>
           </p>
           <div
@@ -242,6 +234,119 @@ Array [
                 My list
               </span>
             </button>
+            <a
+              className="btn movie-card__button"
+              href="add-review.html"
+            >
+              Add review
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="movie-card__wrap movie-card__translate-top"
+    >
+      <div
+        className="movie-card__info"
+      >
+        <div
+          className="movie-card__poster movie-card__poster--big"
+        >
+          <img
+            alt="posterName"
+            height="327"
+            src="https://via.placeholder.com/150"
+            width="218"
+          />
+        </div>
+        <div
+          className="movie-card__desc"
+        >
+          <nav
+            className="movie-nav movie-card__nav"
+          >
+            <ul
+              className="movie-nav__list"
+            >
+              <li
+                className="movie-nav__item movie-nav__item--active"
+              >
+                <a
+                  className="movie-nav__link"
+                  href="#"
+                >
+                  Overview
+                </a>
+              </li>
+              <li
+                className="movie-nav__item"
+              >
+                <a
+                  className="movie-nav__link"
+                  href="#"
+                >
+                  Details
+                </a>
+              </li>
+              <li
+                className="movie-nav__item"
+              >
+                <a
+                  className="movie-nav__link"
+                  href="#"
+                >
+                  Reviews
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div
+            className="movie-rating"
+          >
+            <div
+              className="movie-rating__score"
+            >
+              10
+            </div>
+            <p
+              className="movie-rating__meta"
+            >
+              <span
+                className="movie-rating__level"
+              >
+                Awesome
+              </span>
+              <span
+                className="movie-rating__count"
+              >
+                240 ratings
+              </span>
+            </p>
+          </div>
+          <div
+            className="movie-card__text"
+          >
+            <p>
+              In the 1930s, The Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.
+            </p>
+            <p>
+              Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.
+            </p>
+            <p
+              className="movie-card__director"
+            >
+              <strong>
+                Director: Wes Andreson
+              </strong>
+            </p>
+            <p
+              className="movie-card__starring"
+            >
+              <strong>
+                Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other
+              </strong>
+            </p>
           </div>
         </div>
       </div>
@@ -251,133 +356,26 @@ Array [
     className="page-content"
   >
     <section
-      className="catalog"
+      className="catalog catalog--like-this"
     >
       <h2
-        className="catalog__title visually-hidden"
+        className="catalog__title"
       >
-        Catalog
+        More like this
       </h2>
-      <ul
-        className="catalog__genres-list"
-      >
-        <li
-          className="catalog__genres-item catalog__genres-item--active"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            All genres
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Comedies
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Crime
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Dramas
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Kids & Family
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Romance
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Sci-Fi
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Thrillers
-          </a>
-        </li>
-      </ul>
       <div
         className="catalog__movies-list"
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <video
+            <img
+              alt="Fantastic Beasts: The Crimes of Grindelwald"
               height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
               width="280"
             />
           </div>
@@ -388,50 +386,20 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Fantastic Beasts
+              Fantastic Beasts: The Crimes of Grindelwald
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <video
+            <img
+              alt="Bohemian Rhapsody"
               height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              The Grand Budapest Hotel
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+              src="img/bohemian-rhapsody.jpg"
               width="280"
             />
           </div>
@@ -448,17 +416,14 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <video
+            <img
+              alt="Macbeth"
               height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+              src="img/macbeth.jpg"
               width="280"
             />
           </div>
@@ -475,17 +440,14 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <video
+            <img
+              alt="Aviator"
               height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+              src="img/aviator.jpg"
               width="280"
             />
           </div>
@@ -496,47 +458,10 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              The Godfather
+              Aviator
             </a>
           </h3>
         </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video
-              height="175"
-              poster="img/the-grand-budapest-hotel-poster.jpg"
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              The Wizard of Oz
-            </a>
-          </h3>
-        </article>
-      </div>
-      <div
-        className="catalog__more"
-      >
-        <button
-          className="catalog__button"
-          type="button"
-        >
-          Show more
-        </button>
       </div>
     </section>
     <footer
@@ -547,6 +472,8 @@ Array [
       >
         <a
           className="logo__link logo__link--light"
+          href="/"
+          onClick={[Function]}
         >
           <span
             className="logo__letter logo__letter--1"

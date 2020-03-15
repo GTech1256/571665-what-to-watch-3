@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
-import {filmPropTypes} from "../film-card/film-card.jsx";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import {getRaitinLevelTextByScoreRaiting} from "./utils/utils";
 
 const MoviePage = ({
   name,
@@ -110,7 +111,7 @@ const MoviePage = ({
             <div className="movie-rating">
               <div className="movie-rating__score">{rating.toString().slice(0, 3)}</div>
               <p className="movie-rating__meta">
-                <span className="movie-rating__level">Very good</span>
+                <span className="movie-rating__level">{getRaitinLevelTextByScoreRaiting(rating)}</span>
                 <span className="movie-rating__count">240 ratings</span>
               </p>
             </div>
@@ -189,6 +190,22 @@ const MoviePage = ({
   </Fragment>
 );
 
-MoviePage.propTypes = filmPropTypes;
+MoviePage.propTypes = {
+  name: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  poster: PropTypes.exact({
+    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }),
+  cover: PropTypes.exact({
+    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }),
+  preview: PropTypes.exact({
+    url: PropTypes.string.isRequired
+  }),
+};
 
 export default MoviePage;

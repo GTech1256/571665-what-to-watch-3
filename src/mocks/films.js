@@ -11,6 +11,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
     }
   },
   {
@@ -25,6 +28,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   },
   {
@@ -39,6 +45,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
     }
   },
   {
@@ -53,6 +62,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   },
   {
@@ -67,6 +79,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
     }
   },
   {
@@ -81,6 +96,9 @@ export default [
     cover: {
       url: `img/bg-the-grand-budapest-hotel.jpg`,
       name: `POSTER NAME`
+    },
+    preview: {
+      url: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
     }
   },
 ];
