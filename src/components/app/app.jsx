@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
-import { filmType } from "../../types.js";
+import {filmType} from "../../types.js";
 
 class App extends PureComponent {
 

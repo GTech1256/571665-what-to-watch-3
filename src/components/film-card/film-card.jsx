@@ -1,9 +1,8 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router-dom";
-import MoviePage from "../movie-page/movie-page.jsx";
 import VideoPlayer from "../video-player/video-player.jsx";
-import { filmType } from "../../types.js";
+import {filmType} from "../../types.js";
 
 let currentTimeout = null;
 const TIMEOUT_DELAY = 1000; // 1s

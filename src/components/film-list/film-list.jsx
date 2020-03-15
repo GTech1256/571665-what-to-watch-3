@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmCard from "../film-card/film-card.jsx";
-import MoviePage from "../movie-page/movie-page.jsx";
-import { filmType } from "../../types.js";
+import {filmType} from "../../types.js";
 
 const FilmList = ({
   films,
