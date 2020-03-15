@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main.jsx";
 import MoviePage from "../movie-page/movie-page.jsx";
+import { filmType } from "../../types.js";
 
 class App extends PureComponent {
 
@@ -34,7 +35,11 @@ class App extends PureComponent {
             />
           </Route>
           <Route exact path="/dev-film">
-            <MoviePage {...this.state.activeFilm} />
+            <MoviePage
+              film={this.state.activeFilm}
+              allFilms={this.props.films.filter((it) => it.name !== this.state.activeFilm.name)}
+              onFilmClick={this._handleClickOnFilm}
+            />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -43,8 +48,8 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  filmOnHeader: PropTypes.shape(MoviePage.propTypes),
-  films: PropTypes.arrayOf(PropTypes.shape(MoviePage.propTypes)).isRequired,
+  filmOnHeader: PropTypes.shape(filmType),
+  films: PropTypes.arrayOf(PropTypes.shape(filmType)).isRequired,
 };
 
 export default App;
