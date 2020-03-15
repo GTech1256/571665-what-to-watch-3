@@ -9,11 +9,11 @@ class VideoPlayer extends PureComponent {
   }
 
   componentDidMount() {
-    const {src, isPlaying} = this.props;
+    const {src, isPlaying, isMuted = true} = this.props;
     const video = this._videoRef.current;
 
     video.src = src;
-    video.muted = true;
+    video.muted = isMuted;
 
     if (isPlaying) {
       video.play();
@@ -51,6 +51,7 @@ class VideoPlayer extends PureComponent {
 
 VideoPlayer.propTypes = {
   isPlaying: PropTypes.bool.isRequired,
+  isMuted: PropTypes.bool,
   src: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
 };
