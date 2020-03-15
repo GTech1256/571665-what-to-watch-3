@@ -262,6 +262,7 @@ const MoviePage = ({
           films={allFilms}
           filterByGenre={genre}
           onFilmClick={onFilmClick}
+          limit={4}
         />
       </section>
 
