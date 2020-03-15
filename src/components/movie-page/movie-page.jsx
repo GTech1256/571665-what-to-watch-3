@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import {getRaitinLevelTextByScoreRaiting} from "./utils";
+import {getRaitinLevelTextByScoreRaiting} from "./utils/utils";
 
 const MoviePage = ({
   name,
