@@ -1,6 +1,6 @@
-import React from 'react'
-import renderer from "react-test-renderer"
-import VideoPlayer from './video-player'
+import React from "react";
+import renderer from "react-test-renderer";
+import VideoPlayer from "./video-player";
 
 const mock = {
   isPlaying: false,
