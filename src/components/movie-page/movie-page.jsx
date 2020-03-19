@@ -7,6 +7,10 @@ import Tab from "../tab/tab.jsx";
 import {filmType} from "../../types";
 import FilmList from "../film-list/film-list.jsx";
 
+const getFilteredFilmsByGenre = (films, genre) => films
+  .filter((film) => film.genre === genre);
+
+
 const MoviePage = ({
   film: {
     name,
@@ -259,8 +263,7 @@ const MoviePage = ({
         <h2 className="catalog__title">More like this</h2>
 
         <FilmList
-          films={allFilms}
-          filterByGenre={genre}
+          films={getFilteredFilmsByGenre(allFilms, genre)}
           onFilmClick={onFilmClick}
           limit={4}
         />
