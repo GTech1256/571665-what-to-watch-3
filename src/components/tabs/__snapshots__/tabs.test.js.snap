@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs /> shoult render correct 1`] = `
+<div
+  className="movie-card__desc"
+>
+  <nav
+    className="movie-nav movie-card__nav"
+  >
+    <ul
+      className="movie-nav__list"
+    >
+      <li
+        className="movie-nav__item movie-nav__item--active"
+        onClick={[Function]}
+      >
+        <a
+          className="movie-nav__link"
+        >
+          1
+        </a>
+      </li>
+      <li
+        className="movie-nav__item "
+        onClick={[Function]}
+      >
+        <a
+          className="movie-nav__link"
+        >
+          2
+        </a>
+      </li>
+      <li
+        className="movie-nav__item "
+        onClick={[Function]}
+      >
+        <a
+          className="movie-nav__link"
+        >
+          3
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <p>
+    1
+  </p>
+</div>
+`;

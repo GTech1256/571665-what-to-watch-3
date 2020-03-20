@@ -1,24 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmCard from "../film-card/film-card.jsx";
-import MoviePage from "../movie-page/movie-page.jsx";
+import {filmType} from "../../types.js";
 
-const FilmList = ({films, onFilmClick}) => (
-  <div className="catalog__movies-list">
-    {films.length === 0 ?
-      <p>Список фильмов пуст</p> :
-      films.map((film) => <FilmCard
-        film={film}
-        onClick={onFilmClick}
-        key={film.name}
-      />)
-    }
-  </div>
-);
+const FilmList = ({
+  films,
+  onFilmClick,
+  limit
+}) => {
+  const localFilms = films.slice(
+      0,
+      typeof limit === `number` ?
+        limit :
+        films.length
+  );
+
+  return (
+    <div className="catalog__movies-list">
+      {localFilms.length === 0 ?
+        <p>Список фильмов пуст</p> :
+        localFilms.map((film) => <FilmCard
+          film={film}
+          onClick={onFilmClick}
+          key={film.name}
+        />)
+      }
+    </div>
+  );
+};
+
 
 FilmList.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape(MoviePage.propTypes)).isRequired,
-  onFilmClick: PropTypes.func.isRequired
+  films: PropTypes.arrayOf(PropTypes.shape(filmType)).isRequired,
+  onFilmClick: PropTypes.func.isRequired,
+  limit: PropTypes.number
 };
 
 export default FilmList;

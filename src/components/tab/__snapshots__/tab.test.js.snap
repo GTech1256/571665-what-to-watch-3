@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tab /> shoult render correct 1`] = `
+<li
+  className="movie-nav__item movie-nav__item--active"
+  onClick={[Function]}
+>
+  <a
+    className="movie-nav__link"
+  >
+    title
+  </a>
+</li>
+`;
